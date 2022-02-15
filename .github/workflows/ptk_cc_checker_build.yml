@@ -1,0 +1,25 @@
+name: ptk CC CI
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'ptk/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'ptk/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: make all
+      id: cross_make_all
+      run: |
+        cd ptk/build
+        make all
+    - name: make clean
+      id: cross_make_clean
+      run: |
+        cd ptk/build
+        make clean
