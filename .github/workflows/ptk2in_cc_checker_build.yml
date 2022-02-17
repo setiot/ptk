@@ -13,10 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: install env
+      id: install_cross_toolchain
+      run: |
+        sudo apt-get update
+        sudo apt-get install jq
+        sudo apt-get install gcc-arm-none-eabi \
+                             libnewlib-arm-none-eabi \
+                             libstdc++-arm-none-eabi-newlib \
+                             binutils-arm-none-eabi \
+                             build-essential
     - name: make all
       id: cross_make_all
       run: |
         cd ptk2in/build
+        cmake ..
         make all
     - name: make clean
       id: cross_make_clean
