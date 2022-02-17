@@ -1,4 +1,4 @@
-name: ptk toc
+name: ptk2in toc
 on:
   push:
     paths:

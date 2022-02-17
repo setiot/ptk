@@ -1,13 +1,13 @@
-name: ptk CC CI
+name: ptk2in CC CI
 on:
   push:
     branches: [ main ]
     paths:
-      - 'ptk/**'
+      - 'ptk2in/**'
   pull_request:
     branches: [ main ]
     paths:
-      - 'ptk/**'
+      - 'ptk2in/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,10 +16,10 @@ jobs:
     - name: make all
       id: cross_make_all
       run: |
-        cd ptk/build
+        cd ptk2in/build
         make all
     - name: make clean
       id: cross_make_clean
       run: |
-        cd ptk/build
+        cd ptk2in/build
         make clean

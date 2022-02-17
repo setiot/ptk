@@ -1,13 +1,13 @@
-name: ptk CC checker
+name: ptk2in CC checker
 on:
   push:
     branches: [ main ]
     paths:
-      - 'ptk/**'
+      - 'ptk2in/**'
   pull_request:
     branches: [ main ]
     paths:
-      - 'ptk/**'
+      - 'ptk2in/**'
 jobs:
   build:
     runs-on: ubuntu-latest
